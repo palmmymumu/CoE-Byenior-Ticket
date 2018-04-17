@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WONDER SHADE OF MASK</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <style>
+    body {
+      background: rgb(240, 240, 240);
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      var ids = ['123', '30'];
+      $('#form').submit(function(e) {
+        e.preventDefault();
+        var id = $('#id').val();
+        if (id.length != 10 || id.indexOf('5635512') != 0)
+          return alert('ไม่พบบัตรเชิญของรหัสนักศึกษา ' + id + ' กรุณาตรวจสอบใหม่อีกครั้ง!');
+        var id2 = id.substr(7, 1) == '0' ? id.substr(8) : id.substr(7);
+        if (ids.indexOf(id2) >= 0)
+          $.fancybox({
+            'width': '40%',
+            'height': '40%',
+            'autoScale': true,
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'type': 'iframe',
+            'href': 'http://www.example.com'
+          });
+        else
+          return alert('ไม่พบบัตรเชิญของรหัสนักศึกษา ' + id + ' กรุณาตรวจสอบใหม่อีกครั้ง!');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <center>
+          <p>
+            <img src="assets/img/logo.png" alt="Wonder Shade of Mask" class="img-responsive">
+          </p>
+          <form id="form">
+            <p>
+              <input type="text" id="id" placeholder="กรอกรหัสนักศึกษา..." class="form-control input-lg">
+            </p>
+            <button type="submit" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> รับบัตรเข้างาน</button>
+          </form>
+        </center>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
