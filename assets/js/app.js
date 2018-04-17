@@ -2,7 +2,7 @@ $(document).ready(function() {
   var ids = ['123', '30'];
   $('#submit').click(function(e) {
     var id = $('#id').val();
-    if (id.length != 10 || id.indexOf('5635512') != 0)
+    if (id.length != 10 || id.indexOf('5735512') != 0)
       return alert('ไม่พบบัตรเชิญของรหัสนักศึกษา ' + id + ' กรุณาตรวจสอบใหม่อีกครั้ง!');
     var url = 'assets/img/card/C' + (
       id.substr(7, 1) == '0'
